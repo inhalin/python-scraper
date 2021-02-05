@@ -15,7 +15,6 @@ def extract_job(html):
   company, location = html.find('h3').find_all('span', recursive = False)
   company = company.get_text(strip=True)
   location = location.get_text(strip=True)
-  # location = location.get_text(strip=True).strip('-').strip(' \r').strip('\n')
   job_id = html['data-jobid']
   return {
     'title': title, 
